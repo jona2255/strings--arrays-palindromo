@@ -1,7 +1,6 @@
 function esPalindromo(frase) {
   let fraseModificada = frase.toLowerCase();
-  fraseModificada = fraseModificada.split(/[.,:; ()_ ?¿!¡-\s]/g);
-  fraseModificada = fraseModificada.join("");
+  fraseModificada = fraseModificada.replace(/[.,:; ()_ ?¿!¡-\s]/g, "");
   fraseModificada = fraseModificada.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   let fraseAlReves = "";
   for (let index = fraseModificada.length - 1; index >= 0; index--) {
